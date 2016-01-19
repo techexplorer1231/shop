@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 import shortid from 'shortid';
 import Category from '../category/category.model';
 import Brand from '../brand/brand.model';
+import Image from '../image/image.model';
 
 var ProductSchema = new mongoose.Schema({
   title: {
@@ -55,7 +56,8 @@ var ProductSchema = new mongoose.Schema({
   catalog_only: {
     type: String,
     required: true
-  }
+  },
+  image: [{type: Schema.Types.ObjectId, ref: 'Image'}]
 });
 
 export default mongoose.model('Product', ProductSchema);
