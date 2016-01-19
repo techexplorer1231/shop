@@ -11,6 +11,12 @@
 
 import _ from 'lodash';
 import Product from './product.model';
+/**
+ * import category and brand so we can save refs in category and brand
+ * when saving products
+ */
+import Category from '../category/category.model';
+import Brand from '../brand/brand.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
